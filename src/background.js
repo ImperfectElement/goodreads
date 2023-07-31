@@ -102,7 +102,8 @@ function parseOverdriveResults(data, requestInfo) {
       var regex = /help.overdrive.com\?Key=(.*?)&/;
       var match = regex.exec(data);
       if (match && match.length > 0) {
-        var libraryLink = match[1] + ".overdrive.com";
+        var libraryLink = match[1] + ".overdrive.com"
+          or var libraryLink = "https://libbyapp.com/library/" match[1] ;
         libraries[requestInfo.libraryIndex] = {
           url: libraryLink,
           newDesign: true
